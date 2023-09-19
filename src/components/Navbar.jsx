@@ -11,7 +11,7 @@ const Navbar = () => {
     <div className="flex bg-base-600 font-lg py-4 flex-col lg:flex-row mx-auto max-w-7xl">
       <div className="mx-auto flex items-center">
         <NavLink to={`/`} className="font-bold normal-case text-3xl">
-          Programmers Blog
+          Robiul&apos;s Blog
         </NavLink>
       </div>
       <div className="mx-auto my-10">

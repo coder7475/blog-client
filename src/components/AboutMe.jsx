@@ -15,10 +15,12 @@ const AboutMe = () => {
               </h2>
 
               <p className="lg:w-2/3 my-6 font-light">
-              Alexander Islam, the visionary owner of &apos;&apos;Programmers Blog&apos;&apos; a digital haven for tech enthusiasts, coding aficionados, and software developers. With a background deeply rooted in programming and software development, Scott&apos;s passion for technology knows no bounds.
+              Robiul Hossain, the visionary owner of &apos;&apos;Robiul&apos;s Blog&apos;&apos; a digital haven for tech enthusiasts, coding aficionados, and software developers. With a background deeply rooted in programming and software development, Robiul&apos;s passion for technology knows no bounds.
               </p>
               <p className="lg:w-2/3 font-light">
-              As the owner and curator of &apos;&apos;Programmers Blog,&apos;&apos; Scott has carved out a unique space where the magic of code comes to life. His journey as a programmer and software developer is the foundation upon which this blog stands. With years of experience, a wealth of knowledge, and an unquenchable thirst for innovation, Scott has created a platform that serves as a wellspring of information, inspiration, and collaboration.
+              As the owner and curator of &apos;&apos;Robiul&apos; Blog,&apos;&apos; Robiul has carved out a unique space where the magic of code comes to life. His journey as a programmer and software developer is the foundation upon which this blog stands. 
+
+              Robiul is currently focusing on web development using MERN stack. 
               </p>
             </div>
           </main>
@@ -27,7 +29,7 @@ const AboutMe = () => {
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-64 w-full object-cover object-top md:h-[500px] lg:w-full lg:h-full brightness-75"
-          src="/manx.jpg"
+          src="/robiulHossain.png"
           alt="owner image"
         />
       </div>
