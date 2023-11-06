@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="hero min-h-screen bg-base-100 ">
+    <div className="hero min-h-screen bg-base-300 ">
       <div className="hero-content flex-col lg:flex-row-reverse lg:justify-around max-w-8xl">
         <img src="/code.jpg" alt="code wallpaper" className="lg:w-1/2" />
         <div>

@@ -13,7 +13,7 @@ const Newsletter = () => {
 
   return (
     <form
-      className="max-w-5xl mx-auto my-10 bg-gray-800 p-10 rounded-lg"
+      className="max-w-5xl mx-auto my-20 bg-gray-800 p-10 rounded-lg"
       onSubmit={handleSubscribe}
     >
       <header className="footer-title font-bold text-3xl">Newsletter</header>
