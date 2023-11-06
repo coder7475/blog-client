@@ -20,7 +20,7 @@
         5. Sorting blogs by date or time
 5. Featured Post Section: [https://www.hackerrank.com/blog/](https://www.hackerrank.com/blog/)
 6. Subscribe Now Section: [https://www.technologyreview.com/](https://www.technologyreview.com/)
-7. Newsletter Section
+7. Newsletter Section [done]
     1. Have an input of email and submit button
         1. SHOW TOAST on successful submission with message “Thank You for subscibing to our newsletter”
 8. Owners Corner: A bio and message from blog owner
