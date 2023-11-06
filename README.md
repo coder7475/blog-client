@@ -10,7 +10,7 @@
 
 1. Navbar: Home, Add Blog, All Blogs, Featured Blogs, Wishlist, login, Registerm [Done]
 2. Frame Motioon package: At least on one section
-3. Banner: Hero Section = Text + Image
+3. Banner: Hero Section = Text + Image []
 4. Recent Blog Post: 
     1. Show 6 blog Post
         1. Each blog has a title, image, short description, category, details button and wishlist button
