@@ -1,34 +1,86 @@
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-300 font-bold min-h-fit py-4">
-      <div className="flex-1">
-        <NavLink to={`/`} className="btn btn-ghost normal-case text-2xl">
+    <div className="flex bg-base-300 font-semibold py-4 flex-col lg:flex-row mx-auto">
+      <div className="mx-auto flex items-center">
+        <NavLink to={`/`} className="normal-case text-3xl">
           Programmers Blog
         </NavLink>
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-3 btn text-xl">
-          <li>
-            <NavLink to={`/`}>Home</NavLink>
+      <div className="mx-auto">
+        <ul className="flex flex-col lg:flex-row gap-5 justify-center items-center px-3 text-xl">
+          <li className="">
+            <NavLink
+              to={`/`}
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "font-black border-2 p-2"
+                  : isPending
+                  ? "underline"
+                  : ""
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`/addBlog`}>Add Blog</NavLink>
+            <NavLink
+              to={`/addBlog`}
+              className={({ isActive, isPending }) =>
+                isActive
+                  ? "font-black border-2 p-2"
+                  : isPending
+                  ? "underline"
+                  : ""
+              }
+            >
+              Add Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`/allBlogs`}>All Blogs</NavLink>
+            <NavLink to={`/allBlogs`} className={({ isActive, isPending }) =>
+              isActive
+                ? "font-black border-2 p-2"
+                : isPending
+                ? "underline"
+                : ""
+            }>All Blogs</NavLink>
           </li>
           <li>
-            <NavLink to={`/featuredBlogs`}>Featured Blogs</NavLink>
+            <NavLink to={`/featuredBlogs`} className={({ isActive, isPending }) =>
+              isActive
+                ? "font-black border-2 p-2"
+                : isPending
+                ? "underline"
+                : ""
+            }>Featured Blogs</NavLink>
           </li>
           <li>
-            <NavLink to={`/wishlist`}>Wishlist</NavLink>
+            <NavLink to={`/wishlist`} className={({ isActive, isPending }) =>
+              isActive
+                ? "font-black border-2 p-2"
+                : isPending
+                ? "underline"
+                : ""
+            }>Wishlist</NavLink>
           </li>
           <li>
-            <NavLink to={`/login`}>Login</NavLink>
+            <NavLink to={`/login`} className={({ isActive, isPending }) =>
+              isActive
+                ? "font-black border-2 p-2"
+                : isPending
+                ? "underline"
+                : ""
+            }>Login</NavLink>
           </li>
           <li>
-            <NavLink to={`/register`}>Register</NavLink>
+            <NavLink to={`/register`} className={({ isActive, isPending }) =>
+              isActive
+                ? "font-black border-2 p-2"
+                : isPending
+                ? "underline"
+                : ""
+            }>Register</NavLink>
           </li>
         </ul>
       </div>
