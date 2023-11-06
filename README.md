@@ -2,7 +2,7 @@
 
 ## Main Requirements
 
-1. Title with favicon
+1. Title with favicon [Done]
 2. Use toasts or sweet alert on crud operations and login and registration
 3. JWT Authentication
 
