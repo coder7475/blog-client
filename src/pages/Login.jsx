@@ -42,15 +42,16 @@ const Login = () => {
             <div className="text-xl font-medium mt-6">
               <p>
                 Don&apos;t have an Account yet? Please{" "}
-                <Link to={`/register`} className="text-blue text-xl font-bold">
+                <Link
+                  to={`/register`}
+                  className="text-blue-500 text-xl font-bold"
+                >
                   SignUp
                 </Link>
               </p>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-darkBlue text-white text-xl">
-                Login
-              </button>
+              <button className="btn text-white text-xl">Login</button>
             </div>
           </form>
         </div>

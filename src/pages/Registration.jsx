@@ -72,13 +72,13 @@ const Registration = () => {
             <div className="text-xl font-medium mt-6">
               <p>
                 Already Have an Account? Please{" "}
-                <Link to={`/login`} className="text-blue text-xl font-bold">
+                <Link to={`/login`} className="text-blue-500 text-xl font-bold">
                   Login
                 </Link>
               </p>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-darkBlue text-white text-xl">
+              <button className="btn text-white text-xl">
                 Register
               </button>
             </div>

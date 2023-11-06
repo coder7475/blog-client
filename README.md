@@ -78,7 +78,7 @@
 
 1. Add 404 page [Done]
 2. Email and password based Auth(Firebase)
-3. Signin by Google(firebase)
+3. Signin by Google(firebase) 
 4. Login page: display error with sweet alert
 5. Registration page: display error for password when:
     1. password is less than 6 characters
