@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Registration = () => {
   return (
-    <div className="hero font-display min-h-screen">
+    <div className="hero min-h-screen">
       <div className="hero-content bg-gray-800 rounded-xl flex-col border-2 border-slate-700 p-16">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Registration Form!</h1>
