@@ -1,13 +1,13 @@
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="flex bg-base-300 font-semibold py-4 flex-col lg:flex-row mx-auto">
+    <div className="flex bg-base-300 font-lg py-4 flex-col lg:flex-row mx-auto">
       <div className="mx-auto flex items-center">
-        <NavLink to={`/`} className="normal-case text-3xl">
+        <NavLink to={`/`} className="font-bold normal-case text-3xl">
           Programmers Blog
         </NavLink>
       </div>
-      <div className="mx-auto">
+      <div className="mx-auto my-10">
         <ul className="flex flex-col lg:flex-row gap-5 justify-center items-center px-3 text-xl">
           <li className="">
             <NavLink

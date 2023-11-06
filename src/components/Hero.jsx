@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="hero-content flex-col lg:flex-row-reverse lg:justify-around max-w-8xl">
         <img src="/code.jpg" alt="code wallpaper" className="lg:w-1/2" />
         <div>
-          <h1 className="text-6xl font-black py-5">Programmers Blog!</h1>
+          <h1 className="text-4xl lg:text-6xl font-black">Programmers Blog!</h1>
           <p className="w-full  text-xl font-light py-6">
             Welcome to our platform! We are a team of dedicated individuals
             passionate about sharing knowledge, fostering creativity, and
@@ -23,7 +23,7 @@ const Hero = () => {
             Lives – Explore the World of Knowledge with Us! &apos;&apos;
           </blockquote>
           <NavLink to={"/register"}>
-            <button className="btn btn-neutral btn-outline text-xl font-bold">
+            <button className="btn btn-neutral btn-outline text-xl font-bold mb-10">
               Register Now
             </button>
           </NavLink>
