@@ -23,7 +23,7 @@
 7. Newsletter Section [done]
     1. Have an input of email and submit button
         1. SHOW TOAST on successful submission with message “Thank You for subscibing to our newsletter”
-8. Owners Corner: A bio and message from blog owner
+8. Owners Corner: A bio and message from blog owner [Done]
 9. Footer [Done]
 
 ### All Blogs Page
