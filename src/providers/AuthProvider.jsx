@@ -3,7 +3,7 @@ import {
   onAuthStateChanged,
   signInWithPopup,
 } from "firebase/auth";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import AuthContext from '../contexts/AuthContext';
 import auth from '../Firebase/firebase.config';
@@ -31,10 +31,17 @@ function AuthProvider({ children }) {
       .catch((err) => alert(err));
   };
 
+  const logOut = () => {
+    setUser(null);
+    setLoading(true);
+    return signOut(auth);
+  }
+
   const authInfo = {
     user,
     loading,
     googleSignIn,
+    logOut
   };
 
   return (

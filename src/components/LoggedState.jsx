@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import AuthContext from "../contexts/AuthContext";
 
 function LoggedState() {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   // console.log(user.photoURL);
 
   return (
@@ -14,7 +14,7 @@ function LoggedState() {
         </div>
       </div>
       
-        <NavLink to={`/login`}>
+        <NavLink to={`/login`} onClick={logOut}>
           <button className="">
             LogOut
           </button>
