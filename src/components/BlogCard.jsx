@@ -2,8 +2,8 @@ import PropTypes from "prop-types"
 import { NavLink } from "react-router-dom";
 
 const BlogCard = ({ blog }) => {
-  const { _id, title, image, short_description, category } = blog;
-  // console.log(blog);
+  const { _id, title, image, short_description, category, timestamp } = blog;
+  console.log(blog);
   return (
     <div className="card justify-center items-center shadow-xl border-2 border-gray-400 bg-slate-600">
       <figure className="p-5 w-full">
@@ -11,12 +11,13 @@ const BlogCard = ({ blog }) => {
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{title}</h2>
+        <h2 className="card-title font-thin">Published: {timestamp.slice(0, 10)}     {timestamp.slice(11,16)}</h2>
         <h2 className="text-xl">
-          <span className="font-semibold">Category: </span>
+          {/* <span className="font-semibold">Category: </span> */}
           {category}
         </h2>
 
-        <p className="text-xl py-2">{short_description}</p>
+        <p className="text-xl py-2 font-light">{short_description}</p>
         <div className="card-actions">
           <button className="btn bg-burntSienna text-white text-lg font-semibold">
             <NavLink to={`/${_id}`}>View Details</NavLink>
@@ -36,9 +37,13 @@ BlogCard.propTypes = {
     category: PropTypes.any,
     image: PropTypes.any,
     short_description: PropTypes.any,
+    timestamp: PropTypes.shape({
+      slice: PropTypes.func
+    }),
     title: PropTypes.any
   })
 }
+
 
 
 
