@@ -2,11 +2,15 @@ import Navbar from "../components/Navbar";
 import { useParams } from "react-router-dom";
 import useAxios from "/src/hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
+import { useContext } from 'react';
+import AuthContext from '../contexts/AuthContext';
 
 const BlogDetailsPage = () => {
   const mainAxios = useAxios();
   const url = `/allBlogs`;
   const blogId = useParams();
+  const { user } = useContext(AuthContext);
+  // console.log(user.email);
   // console.log(blogId.id);
   const getAllBlogs = async () => {
     const res = await mainAxios.get(url);
@@ -18,7 +22,6 @@ const BlogDetailsPage = () => {
   });
 
   if (isLoading) return <span>Loading...</span>;
-
   const blogs = data.data;
   // console.log(blogs);
   const blog = blogs.find((blog) => blog._id === blogId.id);
@@ -32,6 +35,7 @@ const BlogDetailsPage = () => {
     short_description,
     long_description,
   } = blog;
+  // console.log(email);
   return (
     <div>
       <Navbar />
@@ -59,6 +63,9 @@ const BlogDetailsPage = () => {
           </p>
         </div>
       </div>
+      {
+        user?.email=== email ? <h1 className="text-center text-3xl font-bold py-8 bg-gray-700 lg:py-16">You can&apos;t comment on your own blog</h1> :
+      
       <section className="bg-gray-700 py-8 lg:py-16 antialiased">
         <div className="max-w-2xl mx-auto px-4">
           <div className="flex justify-between items-center mb-6">
@@ -85,6 +92,7 @@ const BlogDetailsPage = () => {
           </form>
         </div>
       </section>
+    }
     </div>
   );
 };
