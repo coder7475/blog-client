@@ -10,7 +10,7 @@
 
 1. Navbar: Home, Add Blog, All Blogs, Featured Blogs, Wishlist, login, Registerm [Done]
     - If the user is not logged in, the Login and Register button should show, and if the
-    user is logged in show his profile picture and logout button
+    user is logged in show his profile picture and logout button [Done]
 2. Frame Motioon package: At least on one section
 3. Banner: Hero Section = Text + Image [Done]
 4. Recent Blog Post: 
