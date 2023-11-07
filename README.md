@@ -25,9 +25,9 @@
 ### All Blogs Page
 
 1. All Blog Post are shown : Use Pagination [Done]
-2. Filter by category. 
-3. Search Field to search blogs by blog title
-4. Blogs have: title, image, short description, category, details button and wishlist button
+2. Filter by category. [Done]
+3. Search Field to search blogs by blog title [Done]
+4. Blogs have: title, image, short description, category, details button and wishlist button [Done]
 5. Details button and wishlist button works as intended
 
 ### Blog Details Page

@@ -26,9 +26,9 @@ const FeaturedBlogs = () => {
 
   // console.log(latest.data);
   return (
-    <div className="min-h-screen max-w-5xl mx-auto py-10">
+    <div className="min-h-screen max-w-7xl px-10 mx-auto py-10 bg-gradient-to-r from-zinc-400 to-slate-500 rounded-lg">
       <h1 className="text-5xl font-bold text-center my-5">Featured Blogs</h1>
-      <div className="flex flex-col lg:flex-row gap-4 my-10">
+      <div className="flex flex-col lg:flex-row gap-4 my-10 ">
         {
           latest.data.slice(0,3).map((blog) => <BlogCard blog={blog} key={blog._id}></BlogCard>)
         }
