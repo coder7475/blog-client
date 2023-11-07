@@ -24,7 +24,7 @@ const RecentBlogs = () => {
     return <span>Error: {error.message}</span>
   }
 
-  console.log(latest.data);
+  // console.log(latest.data);
   return (
     <div className="min-h-screen max-w-5xl mx-auto">
       <h1 className="text-5xl font-bold text-center my-5">Recent Blog Posts</h1>

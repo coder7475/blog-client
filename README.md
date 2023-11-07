@@ -11,8 +11,8 @@
 3. Recent Blog Posts: 
     1. Show 6 blog Post
         1. Each blog has a title, image, short description, category, details button and wishlist button [Done]
-        2. Clicking wishlist button will add the blog on wishlist
-        3. Details button will take to Blog Details Page
+        2. Details button will take to Blog Details Page
+        3. Clicking wishlist button will add the blog on wishlist
         4. Add time of posting into database with current time
         5. Sorting blogs by date or time
 4. Featured Post Section: [https://www.hackerrank.com/blog/](https://www.hackerrank.com/blog/)

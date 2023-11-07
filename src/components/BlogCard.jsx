@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const BlogCard = ({ blog }) => {
   const { _id, title, image, short_description, category, timestamp } = blog;
-  console.log(blog);
+  // console.log(blog);
   return (
     <div className="card justify-center items-center shadow-xl border-2 border-gray-400 bg-slate-600">
       <figure className="p-5 w-full">
