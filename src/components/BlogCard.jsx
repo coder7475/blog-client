@@ -37,9 +37,7 @@ BlogCard.propTypes = {
     category: PropTypes.any,
     image: PropTypes.any,
     short_description: PropTypes.any,
-    timestamp: PropTypes.shape({
-      slice: PropTypes.func
-    }),
+    timestamp: PropTypes.any,
     title: PropTypes.any
   })
 }

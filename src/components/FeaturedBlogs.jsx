@@ -24,7 +24,7 @@ const FeaturedBlogs = () => {
     return <span>Error: {error.message}</span>
   }
 
-  console.log(latest.data);
+  // console.log(latest.data);
   return (
     <div className="min-h-screen max-w-5xl mx-auto py-10">
       <h1 className="text-5xl font-bold text-center my-5">Featured Blogs</h1>
