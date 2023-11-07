@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import AuthContext from "../contexts/AuthContext";
+import { updateProfile } from "firebase/auth";
+import auth from "../Firebase/firebase.config";
 
 const Registration = () => {
+  const { Register, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const handleRegistration = (e) => {
     e.preventDefault();
 
@@ -11,19 +18,44 @@ const Registration = () => {
     const email = form.get("email");
     const password = form.get("password");
 
-    console.log(email, password, name, profile);
+    // console.log(email, password, name, profile);
     // password validation
     const re = /(?=.*[A-Z])(?=.*[\W_]).{6,}/g;
     const valid = re.test(password);
     console.log(valid);
-    if ( !valid ) {
+    if (!valid) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Invalid Password!",
-        footer: "Make sure the password is atleast 6 character long, have atleast one capital letter, one numeric letter and one special character"
-      })
+        footer:
+          "Make sure the password is atleast 6 character long, have atleast one capital letter, one numeric letter and one special character",
+      });
     }
+
+    Register(email, password).then(() => {
+      updateProfile(auth.currentUser, {
+        displayName: name,
+        photoURL: profile,
+      })
+        .then(() =>
+          Swal.fire({
+            title: "Success!",
+            text: "You have successfully registered! Please Login!",
+            icon: "success",
+          })
+        )
+        .catch(() =>
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          })
+        );
+      // .then((res) => success("Signed Up successfully! Please Login."));
+      logOut();
+      navigate("/login");
+    });
   };
 
   return (

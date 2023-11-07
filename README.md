@@ -82,7 +82,7 @@
 2. Email and password based Auth(Firebase)
 3. Signin by Google(firebase) [Done]
 4. Login page: display error with sweet alert
-5. Registration page: display error for password when:
+5. Registration page: display error for password when: [Done]
     1. password is less than 6 characters
     2. don’t capital letter
     3. don’t have a special character
