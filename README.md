@@ -30,6 +30,14 @@
 4. Blogs have: title, image, short description, category, details button and wishlist button [Done]
 5. Details button and wishlist button works as intended
 
+### Featured Blogs Page:
+
+1. Table with Top 10 posts
+2. Top posts are based on word count of the long_description
+3. Table Row: Serial Number, Blog Titlee, Blog Owner, Profile Picture
+4. Table Library: Ka-table, React-data-table, Mui-datatables, react-table-library
+
+
 ### Blog Details Page
 
 1. Information about the blog:
@@ -41,6 +49,7 @@
 3. Comment Collection will have: _id, user name, profile picture. Filter by _id in backend
 4. User cannot comment on his/her own blog. Show toast for it
 5. If user is blog owner he or she can update the blog using update button.
+
 
 ### Add Blog Page:
 
@@ -57,13 +66,6 @@
 1. Private Route
 2. Only usable when clicked update button
 3. Reload Functionality: Upon loading stay on the page
-
-### Featured Blogs Page:
-
-1. Table with Top 10 posts
-2. Top posts are based on word count of the long_description
-3. Table Row: Serial Number, Blog Titie, Blog Owner, Profile Picture
-4. Table Library: Ka-table, React-data-table, Mui-datatables, react-table-library
 
 ### Wishlist Page:
 

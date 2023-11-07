@@ -60,7 +60,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to={`/featuredBlogs`}
+              to={`/featuredTable`}
               className={({ isActive, isPending }) =>
                 isActive
                   ? "font-black border-2 p-2"

@@ -5,6 +5,8 @@ import HomePage from '../pages/HomePage';
 import Registration from '../pages/Registration';
 import Login from '../pages/Login';
 import AllBlogs from '../pages/AllBlogs';
+import BlogDetailsPage from '../pages/BlogDetailsPage';
+import KaTable from '../pages/KaTable';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: "/allBlogs",
         element: <AllBlogs/>
+      },
+      {
+        path: "/:id",
+        element: <BlogDetailsPage/>
+      },
+      {
+        path: "/featuredTable",
+        element: <KaTable/>
       }
     ]
   }

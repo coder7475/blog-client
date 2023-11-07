@@ -3,6 +3,7 @@ import useAxios from "/src/hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import BlogCard from "../components/BlogCard";
+import Footer from '../components/Footer';
 
 const AllBlogs = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -134,6 +135,7 @@ const AllBlogs = () => {
           Next
         </button>
       </div>
+      <Footer/>
     </>
   );
 };
