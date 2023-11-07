@@ -5,7 +5,7 @@ import LoggedState from "./LoggedState";
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   
   return (
     <div className="flex bg-base-600 font-lg py-4 flex-col lg:flex-row mx-auto max-w-7xl">

@@ -79,7 +79,7 @@
 ### Authentication:
 
 1. Add 404 page [Done]
-2. Email and password based Auth(Firebase)
+2. Email and password based Auth(Firebase) [Done]
 3. Signin by Google(firebase) [Done]
 4. Login page: display error with sweet alert
 5. Registration page: display error for password when: [Done]

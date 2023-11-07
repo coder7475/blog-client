@@ -1,9 +1,35 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const { googleSignIn } = useContext(AuthContext);
+  const { googleSignIn, login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    // console.log(email, password);
+    login(email, password)
+      .then(() => {
+        Swal.fire({
+          title: "Success!",
+          text: "You have successfully registered! Please Login!",
+          icon: "success",
+        });
+        navigate("/");
+      })
+      .catch(() =>
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Invalid Email/Password!",
+        })
+      );
+  };
 
   return (
     <div className="hero min-h-screen">
@@ -12,7 +38,7 @@ const Login = () => {
           <h1 className="text-5xl font-bold">Login now!</h1>
         </div>
         <div className="card w-full max-w-5xl shadow-xl bg-neutral-700">
-          <form className="card-body">
+          <form className="card-body" onSubmit={handleLogin}>
             <div className="form-control">
               <label className="label" htmlFor="email">
                 <span className="label-text text-xl font-semibold">Email</span>

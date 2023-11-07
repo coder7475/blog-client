@@ -22,7 +22,7 @@ const Registration = () => {
     // password validation
     const re = /(?=.*[A-Z])(?=.*[\W_]).{6,}/g;
     const valid = re.test(password);
-    console.log(valid);
+    // console.log(valid);
     if (!valid) {
       Swal.fire({
         icon: "error",
