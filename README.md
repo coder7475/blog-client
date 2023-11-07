@@ -2,31 +2,25 @@
 
 ## Main Requirements
 
-1. Title with favicon [Done]
-2. Use toasts or sweet alert on crud operations and login and registration
-3. JWT Authentication
-
 ### Home Page:
 
 1. Navbar: Home, Add Blog, All Blogs, Featured Blogs, Wishlist, login, Registerm [Done]
     - If the user is not logged in, the Login and Register button should show, and if the
     user is logged in show his profile picture and logout button [Done]
-2. Frame Motioon package: At least on one section
-3. Banner: Hero Section = Text + Image [Done]
-4. Recent Blog Post: 
+2. Banner: Hero Section = Text + Image [Done]
+3. Recent Blog Posts: 
     1. Show 6 blog Post
         1. Each blog has a title, image, short description, category, details button and wishlist button
         2. Clicking wishlist button will add the blog on wishlist
         3. Details button will take to Blog Details Page
         4. Add time of posting into database with current time
         5. Sorting blogs by date or time
-5. Featured Post Section: [https://www.hackerrank.com/blog/](https://www.hackerrank.com/blog/)
-6. Subscribe Now Section: [https://www.technologyreview.com/](https://www.technologyreview.com/)
-7. Newsletter Section [done]
+4. Featured Post Section: [https://www.hackerrank.com/blog/](https://www.hackerrank.com/blog/)
+5. Newsletter Section [Done]
     1. Have an input of email and submit button
         1. SHOW TOAST on successful submission with message “Thank You for subscibing to our newsletter”
-8. Owners Corner: A bio and message from blog owner [Done]
-9. Footer [Done]
+6. About Me: A bio and message from blog owner [Done]
+7. Footer [Done]
 
 ### All Blogs Page
 
@@ -81,16 +75,21 @@
 1. Add 404 page [Done]
 2. Email and password based Auth(Firebase) [Done]
 3. Signin by Google(firebase) [Done]
-4. Login page: display error with sweet alert
+4. Login page: display error with sweet alert [Done]
 5. Registration page: display error for password when: [Done]
     1. password is less than 6 characters
     2. don’t capital letter
     3. don’t have a special character
     4. don’t have a numeric character
 
+## Bonus
+1. Title with favicon [Done]
+2. Frame Motioon package: At least on one section
+3. Use toasts or sweet alert on crud operations 
+    - login and registration [Done]
+4. JWT Authentication
+
 ### Optional:
 
 1. Use react-loading-skeleton in place of loading spinners
 2. Use react-photo-view to make the image in full screen preview mode
-
-
