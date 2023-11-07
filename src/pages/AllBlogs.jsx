@@ -6,16 +6,29 @@ import BlogCard from "../components/BlogCard";
 
 const AllBlogs = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [category, setCategory] = useState("")
+  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState("");
   const mainAxios = useAxios();
   const blogsPerPage = 6;
   const url = `/allBlogs?page=${currentPage}&size=${blogsPerPage}`;
   const filter = `/allBlogs?category=${category}`
+  const search = `/allBlogs?title=${title}`
   const totalUrl = "/totalBlogs";
-  console.log(category);
+  // console.log(category);
   const handleCategory = async(e)=> {
     e.preventDefault();
     setCategory(e.target.value);
+  }
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // setTitle(e.target)
+    const form = new FormData(e.currentTarget);
+    const titles = form.get("title");
+    // const replaced = title.replaceAll(" ", "%")
+    // console.log(replaced);
+    // let title = e.target.title.replace("%", "%");
+    setTitle(titles);
   }
 
   const getTotalBlogs = async () => {
@@ -24,11 +37,11 @@ const AllBlogs = () => {
   };
 
   const getAllBlogs = async () => {
-    let finURL="";
+    let finURL=url;
     if (category) 
       finURL = filter;
-    else
-      finURL = url;
+    else if (title)
+      finURL = search;
     const res = await mainAxios.get(finURL);
     return res;
   };
@@ -38,7 +51,7 @@ const AllBlogs = () => {
     queryFn: getTotalBlogs,
   });
   const allBlogs = useQuery({
-    queryKey: ["allBlogs", currentPage, category],
+    queryKey: ["allBlogs", currentPage, category, title],
     queryFn: getAllBlogs,
   });
   if (totalBlogs.isPending || allBlogs.isPending) return <span>Loading</span>;
@@ -51,28 +64,31 @@ const AllBlogs = () => {
       setCurrentPage(currentPage + 1);
     }
     setCategory("");
+    setTitle("");
   };
+
   const handlePrev = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
     }
     setCategory("");
-
+    setTitle("");
   };
-
+  
   return (
     <>
       <Navbar />
       <h1 className="text-center font-bold text-5xl py-10">All Blog Posts</h1>
 
-      <div className="text-center">
+      <div className="flex justify-around gap-3 items-center max-w-5xl mx-auto">
         <div className="text-lg font-medium">
-          <span>Filter by: {" "}</span>
+          <span className="font-bold text-xl">Filter by: {"  "}</span>
           <select
             id="category"
             name="category"
             value=""
             onChange={handleCategory}
+            className="h-8 rounded-lg"
           >
 
             <option value="" disabled>Select Category</option>
@@ -88,6 +104,10 @@ const AllBlogs = () => {
             
           </select>
         </div>
+        <form onSubmit={handleSearch}>
+          <input type="text" name="title" className="rounded-l-xl h-12 px-2" placeholder="Enter Title"/>
+          <button className="btn btn-outline">Search</button>
+        </form>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto my-10 gap-3">
         {allBlogs.data.data.map((blog) => (
