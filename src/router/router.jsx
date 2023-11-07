@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import AllBlogs from '../pages/AllBlogs';
 import BlogDetailsPage from '../pages/BlogDetailsPage';
 import KaTable from '../pages/KaTable';
+import PrivateRoute from '../routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        element: <BlogDetailsPage/>
+        element: <PrivateRoute><BlogDetailsPage/></PrivateRoute>
       },
       {
         path: "/featuredTable",
