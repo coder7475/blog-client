@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.7.2",
     "@tanstack/react-query-devtools": "^5.7.2",
     "axios": "^1.6.0",
     "firebase": "^10.5.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.18.0",

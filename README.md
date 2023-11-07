@@ -90,3 +90,5 @@
 
 1. Use react-loading-skeleton in place of loading spinners
 2. Use react-photo-view to make the image in full screen preview mode
+
+

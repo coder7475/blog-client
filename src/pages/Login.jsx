@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import { useContext } from 'react'
+import AuthContext from '../contexts/AuthContext';
+
 
 const Login = () => {
+  const { googleSignIn } = useContext(AuthContext);
+  
   return (
     <div className="hero min-h-screen">
       <div className="hero-content flex-col bg-gray-800 border-2 border-slate-700">
@@ -57,7 +62,7 @@ const Login = () => {
         </div>
         <div className="divider">OR</div>
         <div className="card w-full bg-base-100 shadow-xl max-w-5xl">
-          <button className="btn w-full rounded-xl text-xl font-semibold">
+          <button className="btn w-full rounded-xl text-xl font-semibold" onClick={googleSignIn}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
