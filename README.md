@@ -9,6 +9,8 @@
 ### Home Page:
 
 1. Navbar: Home, Add Blog, All Blogs, Featured Blogs, Wishlist, login, Registerm [Done]
+    - If the user is not logged in, the Login and Register button should show, and if the
+    user is logged in show his profile picture and logout button
 2. Frame Motioon package: At least on one section
 3. Banner: Hero Section = Text + Image [Done]
 4. Recent Blog Post: 
@@ -78,7 +80,7 @@
 
 1. Add 404 page [Done]
 2. Email and password based Auth(Firebase)
-3. Signin by Google(firebase) 
+3. Signin by Google(firebase) [Done]
 4. Login page: display error with sweet alert
 5. Registration page: display error for password when:
     1. password is less than 6 characters

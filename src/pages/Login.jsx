@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import { useContext } from 'react'
+import { useContext } from 'react';
 import AuthContext from '../contexts/AuthContext';
-
 
 const Login = () => {
   const { googleSignIn } = useContext(AuthContext);
@@ -86,7 +85,7 @@ const Login = () => {
                 d="M12 5.25c1.77 0 3.36.61 4.61 1.92l3.45-3.45C18.23 1.19 15.38 0 12 0 7.99 0 4.39 2.34 2.37 5.75l4.05 3.24c1-.62 2.76-1.74 5.58-1.74z"
               />
             </svg>
-            LOGIN with Google
+            Login with Google
           </button>
         </div>
       </div>
