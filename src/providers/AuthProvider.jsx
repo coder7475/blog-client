@@ -32,7 +32,6 @@ function AuthProvider({ children }) {
           text: "You have successfully logged in!",
           icon: "success",
         })
-        
       }
       )
       .catch(() =>

@@ -8,7 +8,7 @@ const Navbar = () => {
   console.log(user);
   
   return (
-    <div className="flex bg-base-300 font-lg py-4 flex-col lg:flex-row mx-auto">
+    <div className="flex bg-base-600 font-lg py-4 flex-col lg:flex-row mx-auto max-w-7xl">
       <div className="mx-auto flex items-center">
         <NavLink to={`/`} className="font-bold normal-case text-3xl">
           Programmers Blog
@@ -89,7 +89,7 @@ const Navbar = () => {
           {user ? (
             <LoggedState />
           ) : (
-            <div>
+            <>
               <li>
                 <NavLink
                   to={`/login`}
@@ -118,7 +118,7 @@ const Navbar = () => {
                   Register
                 </NavLink>
               </li>
-            </div>
+            </>
           )}
         </ul>
       </div>
