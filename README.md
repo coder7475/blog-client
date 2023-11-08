@@ -54,14 +54,14 @@
 
 ### Add Blog Page:
 
-1. Form will take blog infos like:
+1. Form will take blog infos like: [Done]
     1. title
     2. image url
     3. category: Dropdown 
     4. short description
     5. long description
     6. Submit Button
-2. Category with a drop down
+2. Category with a drop down [Done]
 
 ### Update Blog Page:
 

@@ -75,11 +75,13 @@ const BlogDetailsPage = () => {
     <div>
       <Navbar />
       <div className="relative flex w-full max-w-5xl mx-auto flex-col rounded-xl bg-clip-border bg-gray-700 text-slate-200 shadow-md mb-20 mt-10 ">
+        
         <div className="relative shrink-0 overflow-hidden rounded-xl rounded-r-none bg-clip-border bg-gray-700 text-slate-200">
           <figure className="h-2/3">
             <img src={image} alt="image" className="w-full brightness-75" />
           </figure>
         </div>
+        
         <div className="p-6">
           <h6 className="mb-4 block  text-2xl font-semibold uppercase leading-relaxed tracking-normal text-blue-500 antialiased">
             {category}
@@ -87,6 +89,10 @@ const BlogDetailsPage = () => {
           <h4 className="mb-2 block  text-3xl font-bold leading-snug tracking-normal text-blue-gray-900 antialiased">
             {title}
           </h4>
+          {
+            user?.email === email ?
+            <button className="btn btn-outline bg-red-500 text-white">Update</button>: ""
+          }
           <h6 className="mb-4 block text-xl font-light uppercase leading-relaxed tracking-normal antialiased">
             {author}
           </h6>
