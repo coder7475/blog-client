@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import Commet from "../components/Commet";
+import { NavLink } from "react-router-dom";
 
 const BlogDetailsPage = () => {
   const mainAxios = useAxios();
@@ -91,7 +92,11 @@ const BlogDetailsPage = () => {
           </h4>
           {
             user?.email === email ?
-            <button className="btn btn-outline bg-red-500 text-white">Update</button>: ""
+            <NavLink to={`/updateBlog/${blogId.id}`}>
+              <button  className="btn btn-outline bg-red-500 text-white">Update</button>
+              
+              </NavLink>: ""
+                        
           }
           <h6 className="mb-4 block text-xl font-light uppercase leading-relaxed tracking-normal antialiased">
             {author}

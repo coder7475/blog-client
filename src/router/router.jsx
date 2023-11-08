@@ -10,6 +10,7 @@ import KaTable from '../pages/KaTable';
 import PrivateRoute from '../routes/PrivateRoute';
 import Wishlist from '../pages/Wishlist';
 import AddBlog from '../pages/AddBlog';
+import UpdateBlog from '../pages/UpdateBlog';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,13 @@ const router = createBrowserRouter([
         element: 
         <PrivateRoute>
           <AddBlog/>
+        </PrivateRoute>
+      },
+      {
+        path: "/updateBlog/:id",
+        element: 
+        <PrivateRoute>
+          <UpdateBlog/>
         </PrivateRoute>
       }
     ]
