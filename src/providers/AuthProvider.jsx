@@ -71,7 +71,7 @@ function AuthProvider({ children }) {
           // console.log("Token response: ", res.data);
         });
       } else {
-        mainAxios.post("/clear-token", payload).then(() => {
+        mainAxios.get("/clear-token", payload).then(() => {
 
           // console.log(res.data)
         }

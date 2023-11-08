@@ -83,7 +83,7 @@ const AllBlogs = () => {
       <Navbar />
       <h1 className="text-center font-bold text-5xl py-10">All Blog Posts</h1>
 
-      <div className="flex justify-around gap-3 items-center max-w-5xl mx-auto">
+      <div className="flex justify-around gap-3 items-center max-w-5xl mx-auto flex-col lg:flex-col">
         <div className="text-lg font-medium">
           <span className="font-bold text-xl">Filter by: {"  "}</span>
           <select
