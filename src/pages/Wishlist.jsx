@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import WishCard from "../components/WishCard";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const Wishlist = () => {
   const { user } = useContext(AuthContext);
@@ -22,7 +24,7 @@ const Wishlist = () => {
   });
 
   if (isLoading) {
-    return <span>Loading....</span>;
+    return <Skeleton count={5} />;
   }
 
   // console.log(data);

@@ -7,6 +7,8 @@ import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 import Commet from "../components/Commet";
 import { NavLink } from "react-router-dom";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const BlogDetailsPage = () => {
   const mainAxios = useAxios();
@@ -34,9 +36,9 @@ const BlogDetailsPage = () => {
     queryKey: ["allComments"],
     queryFn: getAllComments,
   });
-  if (isLoading) return <span>Loading...</span>;
+  if (isLoading) return <Skeleton count={5} /> ;
   const blogs = data.data;
-  if (commentLoading) return <span>Loading...</span>;
+  if (commentLoading) return <Skeleton count={5} /> ;
   const blog = blogs.find((blog) => blog._id === blogId.id);
   // console.log(blog);
   // console.log(comments.data);

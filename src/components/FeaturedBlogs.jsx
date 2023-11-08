@@ -1,6 +1,8 @@
 import useAxios from "/src/hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import BlogCard from "./BlogCard";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const FeaturedBlogs = () => {
   const mainAxios = useAxios();
@@ -17,7 +19,7 @@ const FeaturedBlogs = () => {
   });
   
   if (isPending) {
-    return <span>Loading.....</span>
+    return <Skeleton count={10} />
   }
 
   if (isError) {

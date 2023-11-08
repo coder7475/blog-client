@@ -4,6 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import BlogCard from "../components/BlogCard";
 import Footer from '../components/Footer';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const AllBlogs = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -55,7 +57,7 @@ const AllBlogs = () => {
     queryKey: ["allBlogs", currentPage, category, title],
     queryFn: getAllBlogs,
   });
-  if (totalBlogs.isPending || allBlogs.isPending) return <span>Loading</span>;
+  if (totalBlogs.isPending || allBlogs.isPending) return <Skeleton count={20} />;
   const { total } = totalBlogs.data.data;
   const totalPages = Math.ceil(total / blogsPerPage);
   const pages = [...Array(totalPages).keys()];

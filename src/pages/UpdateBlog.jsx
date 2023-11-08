@@ -5,6 +5,9 @@ import { useQuery } from '@tanstack/react-query';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from "sweetalert2";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 const UpdateBlog = () => {
   const {user} = useContext(AuthContext);
@@ -23,7 +26,7 @@ const UpdateBlog = () => {
     queryFn: getAllBlog,
   });
 
-  if (isLoading) return <span>Loading...</span>;
+  if (isLoading) return <Skeleton count={5} /> ;
 
   const blogs = data.data;
   const blog = blogs.find(blog => blog._id === blogId.id);

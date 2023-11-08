@@ -3,6 +3,8 @@ import { DataType, EditingMode, SortingMode } from "ka-table/enums";
 import { useQuery } from "@tanstack/react-query";
 import Navbar from "../components/Navbar";
 import useAxios from './../hooks/useAxios';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const KaTable = () => {
   const mainAxios = useAxios();
@@ -25,7 +27,7 @@ const KaTable = () => {
   });
 
   if (isPending) {
-    return <span>Loading.....</span>;
+    return <Skeleton count={5} /> ;
   }
 
   if (isError) {
