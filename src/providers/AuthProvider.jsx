@@ -26,7 +26,7 @@ function AuthProvider({ children }) {
       const userMail = currentUser?.email || user?.email;
       const payload = { email: userMail };
       setUser(currentUser);
-      console.log(currentUser);
+      // console.log(currentUser);
       setLoading(false);
       if (currentUser) {
         mainAxios.post("/access-token", payload)

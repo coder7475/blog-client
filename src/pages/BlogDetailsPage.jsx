@@ -4,14 +4,15 @@ import useAxios from "/src/hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-
+import Swal from "sweetalert2";
 
 const BlogDetailsPage = () => {
+  
   const mainAxios = useAxios();
   const url = `/allBlogs`;
   const blogId = useParams();
   const { user } = useContext(AuthContext);
-  // console.log(user.email);
+  // console.log(user.displayName);
   // console.log(blogId.id);
   const getAllBlogs = async () => {
     const res = await mainAxios.get(url);
@@ -37,6 +38,25 @@ const BlogDetailsPage = () => {
     long_description,
   } = blog;
   // console.log(email);
+  const createComment = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const userComment = form.get("comment");
+    // _id, user name, profile picture
+    const blogComment = {
+      blog_id: blogId.id,
+      comment: userComment,
+      user_email: user.email,
+      user_name : user.displayName
+    }
+    // console.log(blogComment);
+    mainAxios.post("/user/create-comment", blogComment)
+      .then(() => Swal.fire({
+        title: "Success!",
+        text: "Successfully commented!",
+        icon: "success",
+      }));
+  }
   return (
     <div>
       <Navbar />
@@ -74,13 +94,14 @@ const BlogDetailsPage = () => {
               Comments
             </h2>
           </div>
-          <form className="mb-6">
+          <form className="mb-6" onSubmit={createComment}>
             <div className="py-2 px-4 mb-4  rounded-lg rounded-t-lg border bg-gray-800 dark:border-gray-700">
               <label htmlFor="comment" className="sr-only">
                 Your comment
               </label>
               <textarea
                 id="comment"
+                name="comment"
                 rows="6"
                 className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none text-white placeholder-gray-400 bg-gray-800"
                 placeholder="Write a comment..."

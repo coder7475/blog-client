@@ -40,7 +40,7 @@
 
 ### Blog Details Page
 
-1. Information about the blog:
+1. Information about the blog: [Dpme]
     1. title
     2. image
     3. short description
