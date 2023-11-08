@@ -14,6 +14,16 @@ https://programmers-blog-68efb.firebaseapp.com/
 
 ## Features
 
+- Show recent blogs on Home Page sorted by date and time
+- Show featured blogs based on word count of long description
+- Show details page upon clicking details button
+- Able to comment below blogs details page if the blog does not belong to user
+- Show all comments ever made for each blog
+- You can update the blog details if the blog belongs to you if you click update button
+- Show all blogs in All Blogs page with pagination
+- Can filter by category and search by title in All blogs page
+- Add blog to wishlist upon clicking add to wishlist button
+- You can remove blogs from wishlist
 - Registration and Login using email and password
 - Signin using Google 
 - Show SweetAlert for successful or unsuccesful registration
