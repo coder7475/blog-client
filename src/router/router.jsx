@@ -9,6 +9,7 @@ import BlogDetailsPage from '../pages/BlogDetailsPage';
 import KaTable from '../pages/KaTable';
 import PrivateRoute from '../routes/PrivateRoute';
 import Wishlist from '../pages/Wishlist';
+import AddBlog from '../pages/AddBlog';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist/>
+      },
+      {
+        path: "/addBlog",
+        element: <AddBlog/>
       }
     ]
   }
