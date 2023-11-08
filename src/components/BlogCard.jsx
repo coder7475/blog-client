@@ -1,12 +1,21 @@
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import { useContext } from 'react';
-import { AuthContext } from '../providers/AuthProvider';
-import useAxios from '/src/hooks/useAxios';
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import useAxios from "/src/hooks/useAxios";
 import Swal from "sweetalert2";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const BlogCard = ({ blog }) => {
-  const { _id, title, image, short_description, category, timestamp, long_description } = blog;
+  const {
+    _id,
+    title,
+    image,
+    short_description,
+    category,
+    timestamp,
+    long_description,
+  } = blog;
   // console.log(blog);
   const { user } = useContext(AuthContext);
   const mainAxios = useAxios();
@@ -23,8 +32,8 @@ const BlogCard = ({ blog }) => {
       short_description,
       category,
       timestamp,
-      long_description
-    }
+      long_description,
+    };
     // console.log(userWish);
     mainAxios.post(url, userWish).then(() =>
       Swal.fire({
@@ -33,15 +42,25 @@ const BlogCard = ({ blog }) => {
         icon: "success",
       })
     );
-  }
+  };
   return (
     <div className="card justify-center items-center shadow-xl border-2 border-gray-400 bg-slate-600">
-      <figure className="p-5 w-full">
-        <img src={image} alt="service" className="rounded-xl h-64 w-full brightness-75" />
-      </figure>
+      <PhotoProvider>
+        <PhotoView src={image}>
+          <figure className="p-5 w-full">
+            <img
+              src={image}
+              alt="blog photo"
+              className="rounded-xl h-64 w-full brightness-75"
+            />
+          </figure>
+        </PhotoView>
+      </PhotoProvider>
       <div className="card-body items-center text-center">
         <h2 className="card-title">{title}</h2>
-        <h2 className="card-title font-thin">Published: {timestamp.slice(0, 10)}     {timestamp.slice(11,16)}</h2>
+        <h2 className="card-title font-thin">
+          Published: {timestamp.slice(0, 10)} {timestamp.slice(11, 16)}
+        </h2>
         <h2 className="text-xl">
           {/* <span className="font-semibold">Category: </span> */}
           {category}
@@ -52,7 +71,10 @@ const BlogCard = ({ blog }) => {
           <button className="btn text-white text-lg font-semibold">
             <NavLink to={`/${_id}`}>View Details</NavLink>
           </button>
-          <button className="btn text-white text-lg font-semibold" onClick={handleWishlist}>
+          <button
+            className="btn text-white text-lg font-semibold"
+            onClick={handleWishlist}
+          >
             Add to Wishlist
           </button>
         </div>
@@ -69,9 +91,8 @@ BlogCard.propTypes = {
     long_description: PropTypes.any,
     short_description: PropTypes.any,
     timestamp: PropTypes.any,
-    title: PropTypes.any
-  })
-}
-
+    title: PropTypes.any,
+  }),
+};
 
 export default BlogCard;

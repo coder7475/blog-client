@@ -97,7 +97,5 @@
 
 ### Optional:
 
-1. Use react-loading-skeleton in place of loading spinners
-    - For Recent Blog Post Section
-    - For Recent Featured Post Section
-2. Use react-photo-view to make the image in full screen preview mode
+1. Use react-loading-skeleton in place of loading spinners [Done]
+2. Use react-photo-view to make the image in full screen preview mode [Done]
