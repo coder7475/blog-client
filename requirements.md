@@ -88,12 +88,12 @@
 
 ## Bonus
 
-0. README file with feature name
+0. README file with feature name [Done]
 1. Title with favicon [Done]
 2. Frame Motion package: At least on one section
-3. Use toasts or sweet alert on crud operations 
-    - login and registration [Done]
+3. Use toasts or sweet alert on crud operations - login and registration [Done]
 4. JWT Authentication
+5. Responsive web design
 
 ### Optional:
 
