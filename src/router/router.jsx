@@ -8,6 +8,7 @@ import AllBlogs from '../pages/AllBlogs';
 import BlogDetailsPage from '../pages/BlogDetailsPage';
 import KaTable from '../pages/KaTable';
 import PrivateRoute from '../routes/PrivateRoute';
+import Wishlist from '../pages/Wishlist';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/featuredTable",
         element: <KaTable/>
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist/>
       }
     ]
   }
