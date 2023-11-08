@@ -10,15 +10,25 @@ import { useEffect, useState } from "react";
 import AuthContext from "../contexts/AuthContext";
 import auth from "../Firebase/firebase.config";
 import Swal from "sweetalert2";
+import useAxios from "/src/hooks/useAxios";
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   // console.log(user);
+  const mainAxios = useAxios();
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("user in the auth state changed", currentUser);
+      const tokenuser = currentUser;
+      if (tokenuser) {
+        const payload = { email: tokenuser.email };
+        mainAxios.post("/access-token", payload)
+          .then(res => 
+              console.log(res.data)
+            )
+      }
       setUser(currentUser);
       setLoading(false);
     });
