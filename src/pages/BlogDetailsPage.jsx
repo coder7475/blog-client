@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import Commet from "../components/Commet";
 
 const BlogDetailsPage = () => {
   const mainAxios = useAxios();
@@ -58,7 +59,7 @@ const BlogDetailsPage = () => {
       comment: userComment,
       user_email: user.email,
       user_name: user.displayName,
-      user_profile: user.photoURL
+      user_profile: user.photoURL,
     };
     // console.log(blogComment);
     mainAxios.post("/user/create-comment", blogComment).then(() =>
@@ -129,9 +130,12 @@ const BlogDetailsPage = () => {
           </div>
         </section>
       )}
-      {
-        comments.data.map(comment => <li>d</li>)   
-      }
+      <h1 className="text-4xl font-bold text-center pt-10">All Comments</h1>
+      <div className="flex flex-col gap-4 justify-center items-center my-20">
+        {comments.data.map((data) => (
+          <Commet data={data} key={data._id}></Commet>
+        ))}
+      </div>
     </div>
   );
 };

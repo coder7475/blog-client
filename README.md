@@ -11,9 +11,9 @@
 3. Recent Blog Posts: 
     1. Show 6 blog Post
         1. Each blog has a title, image, short description, category, details button and wishlist button [Done]
-        2. Details button will take to Blog Details Page
+        2. Details button will take to Blog Details Page [Done]
         3. Clicking wishlist button will add the blog on wishlist
-        4. Add time of posting into database with current time
+        4. Add time of posting into database with current time 
         5. Sorting blogs by date or time
 4. Featured Post Section: [https://www.hackerrank.com/blog/](https://www.hackerrank.com/blog/)
 5. Newsletter Section [Done]
@@ -28,14 +28,15 @@
 2. Filter by category. [Done]
 3. Search Field to search blogs by blog title [Done]
 4. Blogs have: title, image, short description, category, details button and wishlist button [Done]
-5. Details button and wishlist button works as intended
+5. Details button [Done]
+6. wishlist button 
 
 ### Featured Blogs Page:
 
-1. Table with Top 10 posts
-2. Top posts are based on word count of the long_description
-3. Table Row: Serial Number, Blog Titlee, Blog Owner, Profile Picture
-4. Table Library: Ka-table, React-data-table, Mui-datatables, react-table-library
+1. Table with Top 10 posts [Done]
+2. Top posts are based on word count of the long_description [Done]
+3. Table Row: Serial Number, Blog Titlee, Blog Owner, Profile Picture [Done]
+4. Table Library: Ka-table, React-data-table, Mui-datatables, react-table-library [Done]
 
 
 ### Blog Details Page
@@ -48,9 +49,8 @@
 2. A textarea: Comment with comment owner name and profile picture: Create a comment collection [Done]
 3. Comment Collection will have: _id, user name, profile picture. Filter by _id in backend [Done]
 4. User cannot comment on his/her own blog. Show toast for it [Done]
-5. If user is blog owner he or she can update the blog using update button.
-6. all the comments with comment owner name and
-profile picture will be shown in the comment section
+5. all the comments with comment owner name and profile picture will be shown in the comment section [Done]
+6. If user is blog owner he or she can update the blog using update button.
 
 ### Add Blog Page:
 
