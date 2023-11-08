@@ -30,8 +30,10 @@ function AuthProvider({ children }) {
       setLoading(false);
       if (currentUser) {
         mainAxios.post("/access-token", payload)
-          .then(res => 
-              console.log(res.data)
+          .then(() => {
+            
+          }
+              // console.log(res.data)
             )
       } else {
         mainAxios.post("/clear-token", payload)

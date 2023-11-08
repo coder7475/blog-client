@@ -14,7 +14,7 @@ const BlogDetailsPage = () => {
   const commentsUrl = `/user/allComments/${blogId.id}`;
   // console.log(commentsUrl);
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   // console.log(blogId.id);
   const getAllBlogs = async () => {
     const res = await mainAxios.get(url);
@@ -38,7 +38,7 @@ const BlogDetailsPage = () => {
   if (commentLoading) return <span>Loading...</span>;
   const blog = blogs.find((blog) => blog._id === blogId.id);
   // console.log(blog);
-  console.log(comments.data);
+  // console.log(comments.data);
   const {
     title,
     author,
