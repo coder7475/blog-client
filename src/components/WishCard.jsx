@@ -16,11 +16,11 @@ const WishCard = ({ data }) => {
     mainAxios.delete(url).then(() =>
     Swal.fire({
       title: "Success!",
-      text: "Successfully added to wishlist!",
+      text: "Successfully Removed from wishlist!",
       icon: "success",
     })
   );
-    navigate("/");
+  navigate("/");
   }
 
   return (
