@@ -1,9 +1,28 @@
 import PropTypes from "prop-types"
 import { NavLink } from "react-router-dom";
+import useAxios from '../hooks/useAxios';
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const WishCard = ({ data }) => {
   // console.log(data);
-  const { blog_id, _id, title, category, image, short_description, timestamp, user_email } = data;
+  const { blog_id, _id, title, category, image, short_description, timestamp } = data;
+  const mainAxios = useAxios();
+  const navigate = useNavigate();
+  
+  const handleWishRemove = (id) => {
+    // console.log(`Remove ${id}`);
+    const url = `/user/remove-from-wishlist/${id}`;
+    mainAxios.delete(url).then(() =>
+    Swal.fire({
+      title: "Success!",
+      text: "Successfully added to wishlist!",
+      icon: "success",
+    })
+  );
+    navigate("/");
+  }
+
   return (
     <div className="card justify-center items-center shadow-xl border-2 border-gray-400 bg-slate-600">
      <figure className="p-5 w-full">
@@ -22,7 +41,7 @@ const WishCard = ({ data }) => {
           <button className="btn text-white text-lg font-semibold">
             <NavLink to={`/${blog_id}`}>View Details</NavLink>
           </button>
-          <button className="btn text-white text-lg font-semibold">
+          <button className="btn text-white text-lg font-semibold" onClick={() => handleWishRemove(_id)}>
             Remove to Wishlist
           </button>
         </div>
