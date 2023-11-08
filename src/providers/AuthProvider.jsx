@@ -67,11 +67,15 @@ function AuthProvider({ children }) {
       // console.log(currentUser);
       setLoading(false);
       if (currentUser !== null) {
-        mainAxios.post("/access-token", payload).then((res) => {
-          console.log("Token response: ", res.data);
+        mainAxios.post("/access-token", payload).then(() => {
+          // console.log("Token response: ", res.data);
         });
       } else {
-        mainAxios.post("/clear-token", payload).then((res) => console.log(res.data));
+        mainAxios.post("/clear-token", payload).then(() => {
+
+          // console.log(res.data)
+        }
+        );
       }
     });
     return () => {

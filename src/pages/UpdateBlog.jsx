@@ -30,7 +30,7 @@ const UpdateBlog = () => {
 
   const blogs = data.data;
   const blog = blogs.find(blog => blog._id === blogId.id);
-  console.log(blog);
+  // console.log(blog);
 
   const handleUpdateBlog = (e) => {
 
