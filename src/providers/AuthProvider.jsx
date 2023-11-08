@@ -7,10 +7,12 @@ import {
   signInWithEmailAndPassword
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import AuthContext from "../contexts/AuthContext";
 import auth from "../Firebase/firebase.config";
 import Swal from "sweetalert2";
 import useAxios from "/src/hooks/useAxios";
+import { createContext } from "react";
+
+export const AuthContext = createContext();
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -21,19 +23,24 @@ function AuthProvider({ children }) {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("user in the auth state changed", currentUser);
-      const tokenuser = currentUser;
-      if (tokenuser) {
-        const payload = { email: tokenuser.email };
+      const userMail = currentUser?.email || user?.email;
+      const payload = { email: userMail };
+      setUser(currentUser);
+      console.log(currentUser);
+      setLoading(false);
+      if (currentUser) {
         mainAxios.post("/access-token", payload)
           .then(res => 
               console.log(res.data)
             )
+      } else {
+        mainAxios.post("/clear-token", payload)
+          .then(res => console.log(res.data));
       }
-      setUser(currentUser);
-      setLoading(false);
+      
     });
     return () => unSubscribe();
-  }, []);
+  }, [mainAxios, user?.email]);
 
   // implement google sign in
   const provider = new GoogleAuthProvider();

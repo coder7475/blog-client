@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import useAxios from "/src/hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from 'react';
-import AuthContext from '../contexts/AuthContext';
+import { AuthContext } from '../providers/AuthProvider';
+
 
 const BlogDetailsPage = () => {
   const mainAxios = useAxios();

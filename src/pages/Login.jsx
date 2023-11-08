@@ -1,6 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import AuthContext from "../contexts/AuthContext";
+import { AuthContext } from '../providers/AuthProvider';
+
 import Swal from "sweetalert2";
 
 const Login = () => {

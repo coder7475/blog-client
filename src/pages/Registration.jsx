@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useContext } from "react";
-import AuthContext from "../contexts/AuthContext";
+import { AuthContext } from '../providers/AuthProvider';
+
 import { updateProfile } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
 
