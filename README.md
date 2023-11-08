@@ -1,18 +1,17 @@
 # Project Title
 
-Blog Website - Programmers Blog
+## Blog Website - Programmers Blog
 
 # Live Link
-https://programmers-blog-68efb.web.app/
-https://programmers-blog-68efb.firebaseapp.com/
 
-### Client
-### [Link Here]
+## https://programmers-blog-68efb.web.app/
+## https://programmers-blog-68efb.firebaseapp.com/
 
 # Backend
-## Code: https://github.com/Porgramming-Hero-web-course/b8a11-server-side-coder7475
+## Code: 
+## https://github.com/Porgramming-Hero-web-course/b8a11-server-side-coder7475
 
-## Features
+# Features
 
 - Show recent blogs on Home Page sorted by date and time
 - Show featured blogs based on word count of long description
