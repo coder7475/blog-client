@@ -1,40 +1,41 @@
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 // import Swal from "sweetalert2";
 // import useAuth from './useAuth';
-
+import auth from '../Firebase/firebase.config';
+import {
+  signOut
+} from "firebase/auth";
 const instance = axios.create({
   baseURL: "https://server-programmers-blog.vercel.app/api/v1",
   withCredentials: true,
 });
 
 const useAxios = () => {
-  // const { logOut } = useAuth();
+  
   // const navigate = useNavigate();
-
-  useEffect(() => {
+  const logOut = () => {
+    return signOut(auth);
+  };
+ 
     instance.interceptors.response.use(
       (res) => {
         return res;
       },
       (error) => {
-        const err = error.response;
-        console.log(err);
-        if (err.status === 401 || err.status === 403) {
+        console.log('error tracked in the interceptor', error.response)
+        if (error.response.status === 401 || error.response.status === 403)
+        {
         
-          // logOut().then(() => {
-          //   Swal.fire({
-          //     icon: "error",
-          //     title: "Oops...",
-          //     text: "Invalid Token!",
-          //   });
-          //   navigate("/");
-          // });
+          logOut().then(() => {            
+            // navigate("/");
+          })
+          .catch(error => console.log(error));
         }
       }
     );
-  }, []);
+  
   return instance;
 };
 

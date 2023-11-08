@@ -1,7 +1,5 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { AuthContext } from '../providers/AuthProvider';
-
 
 function LoggedState() {
   const { user, logOut } = useContext(AuthContext);
@@ -15,11 +13,9 @@ function LoggedState() {
         </div>
       </div>
       
-        <NavLink to={`/login`} onClick={logOut}>
-          <button className="">
+          <button className="" onClick={logOut}>
             LogOut
           </button>
-        </NavLink>
       
     </div>
   );

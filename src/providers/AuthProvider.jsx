@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import { onAuthStateChanged, signInWithPopup } from "firebase/auth";
-import { 
+import {
   signOut,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import auth from "../Firebase/firebase.config";
@@ -20,30 +20,6 @@ function AuthProvider({ children }) {
   // console.log(user);
   const mainAxios = useAxios();
 
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log("user in the auth state changed", currentUser);
-      const userMail = currentUser?.email || user?.email;
-      const payload = { email: userMail };
-      setUser(currentUser);
-      // console.log(currentUser);
-      setLoading(false);
-      if (currentUser) {
-        mainAxios.post("/access-token", payload)
-          .then(() => {
-            
-          }
-              // console.log(res.data)
-            )
-      } else {
-        mainAxios.post("/clear-token", payload)
-          .then(res => console.log(res.data));
-      }
-      
-    });
-    return () => unSubscribe();
-  }, [mainAxios, user?.email]);
-
   // implement google sign in
   const provider = new GoogleAuthProvider();
   const googleSignIn = () => {
@@ -55,9 +31,8 @@ function AuthProvider({ children }) {
           title: "Success!",
           text: "You have successfully logged in!",
           icon: "success",
-        })
-      }
-      )
+        });
+      })
       .catch(() =>
         Swal.fire({
           icon: "error",
@@ -68,20 +43,41 @@ function AuthProvider({ children }) {
   };
 
   const logOut = () => {
-    setUser(null);
     setLoading(true);
     return signOut(auth);
   };
 
   const Register = (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password)
-  }
-  
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
   const login = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      // console.log("user in the auth state changed", currentUser);
+      const userEmail = currentUser?.email || user?.email;
+      const payload = { email: userEmail };
+
+      setUser(currentUser);
+      // console.log(currentUser);
+      setLoading(false);
+      if (currentUser !== null) {
+        mainAxios.post("/access-token", payload).then((res) => {
+          console.log("Token response: ", res.data);
+        });
+      } else {
+        mainAxios.post("/clear-token", payload).then((res) => console.log(res.data));
+      }
+    });
+    return () => {
+      return unsubscribe();
+  };
+  }, [user, mainAxios]);
 
   const authInfo = {
     user,
@@ -89,13 +85,13 @@ function AuthProvider({ children }) {
     googleSignIn,
     logOut,
     Register,
-    login
+    login,
   };
 
   return (
-    <div>
+   
       <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
-    </div>
+  
   );
 }
 
