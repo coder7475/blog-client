@@ -2,32 +2,42 @@ import Navbar from "../components/Navbar";
 import { useParams } from "react-router-dom";
 import useAxios from "/src/hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
-import { useContext } from 'react';
-import { AuthContext } from '../providers/AuthProvider';
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const BlogDetailsPage = () => {
-  
   const mainAxios = useAxios();
   const url = `/allBlogs`;
   const blogId = useParams();
+  const commentsUrl = `/user/allComments/${blogId.id}`;
+  // console.log(commentsUrl);
   const { user } = useContext(AuthContext);
-  // console.log(user.displayName);
+  console.log(user);
   // console.log(blogId.id);
   const getAllBlogs = async () => {
     const res = await mainAxios.get(url);
+    return res;
+  };
+
+  const getAllComments = async () => {
+    const res = await mainAxios.get(commentsUrl);
     return res;
   };
   const { isLoading, data } = useQuery({
     queryKey: ["allBlogs"],
     queryFn: getAllBlogs,
   });
-
+  const { isLoading: commentLoading, data: comments } = useQuery({
+    queryKey: ["allComments"],
+    queryFn: getAllComments,
+  });
   if (isLoading) return <span>Loading...</span>;
   const blogs = data.data;
-  // console.log(blogs);
+  if (commentLoading) return <span>Loading...</span>;
   const blog = blogs.find((blog) => blog._id === blogId.id);
   // console.log(blog);
+  console.log(comments.data);
   const {
     title,
     author,
@@ -47,16 +57,18 @@ const BlogDetailsPage = () => {
       blog_id: blogId.id,
       comment: userComment,
       user_email: user.email,
-      user_name : user.displayName
-    }
+      user_name: user.displayName,
+      user_profile: user.photoURL
+    };
     // console.log(blogComment);
-    mainAxios.post("/user/create-comment", blogComment)
-      .then(() => Swal.fire({
+    mainAxios.post("/user/create-comment", blogComment).then(() =>
+      Swal.fire({
         title: "Success!",
         text: "Successfully commented!",
         icon: "success",
-      }));
-  }
+      })
+    );
+  };
   return (
     <div>
       <Navbar />
@@ -84,37 +96,42 @@ const BlogDetailsPage = () => {
           </p>
         </div>
       </div>
-      {
-        user?.email=== email ? <h1 className="text-center text-3xl font-bold py-8 bg-gray-700 lg:py-16">You can&apos;t comment on your own blog</h1> :
-      
-      <section className="bg-gray-700 py-8 lg:py-16 antialiased">
-        <div className="max-w-2xl mx-auto px-4">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-lg lg:text-2xl font-bold text-white">
-              Comments
-            </h2>
-          </div>
-          <form className="mb-6" onSubmit={createComment}>
-            <div className="py-2 px-4 mb-4  rounded-lg rounded-t-lg border bg-gray-800 dark:border-gray-700">
-              <label htmlFor="comment" className="sr-only">
-                Your comment
-              </label>
-              <textarea
-                id="comment"
-                name="comment"
-                rows="6"
-                className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none text-white placeholder-gray-400 bg-gray-800"
-                placeholder="Write a comment..."
-                required
-              ></textarea>
+      {user?.email === email ? (
+        <h1 className="text-center text-3xl font-bold py-8 bg-gray-700 lg:py-16">
+          You can&apos;t comment on your own blog
+        </h1>
+      ) : (
+        <section className="bg-gray-700 py-8 lg:py-16 antialiased">
+          <div className="max-w-2xl mx-auto px-4">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-lg lg:text-2xl font-bold text-white">
+                Comments
+              </h2>
             </div>
-            <button type="submit" className="btn btn-outline">
-              Post comment
-            </button>
-          </form>
-        </div>
-      </section>
-    }
+            <form className="mb-6" onSubmit={createComment}>
+              <div className="py-2 px-4 mb-4  rounded-lg rounded-t-lg border bg-gray-800 dark:border-gray-700">
+                <label htmlFor="comment" className="sr-only">
+                  Your comment
+                </label>
+                <textarea
+                  id="comment"
+                  name="comment"
+                  rows="6"
+                  className="px-0 w-full text-sm border-0 focus:ring-0 focus:outline-none text-white placeholder-gray-400 bg-gray-800"
+                  placeholder="Write a comment..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" className="btn btn-outline">
+                Post comment
+              </button>
+            </form>
+          </div>
+        </section>
+      )}
+      {
+        comments.data.map(comment => <li>d</li>)   
+      }
     </div>
   );
 };

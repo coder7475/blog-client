@@ -45,11 +45,12 @@
     2. image
     3. short description
     4. long description
-2. A textarea: Comment with comment owner name and profile picture: Create a comment collection
-3. Comment Collection will have: _id, user name, profile picture. Filter by _id in backend
-4. User cannot comment on his/her own blog. Show toast for it
+2. A textarea: Comment with comment owner name and profile picture: Create a comment collection [Done]
+3. Comment Collection will have: _id, user name, profile picture. Filter by _id in backend [Done]
+4. User cannot comment on his/her own blog. Show toast for it [Done]
 5. If user is blog owner he or she can update the blog using update button.
-
+6. all the comments with comment owner name and
+profile picture will be shown in the comment section
 
 ### Add Blog Page:
 
