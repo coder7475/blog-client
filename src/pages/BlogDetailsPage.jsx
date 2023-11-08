@@ -65,9 +65,10 @@ const BlogDetailsPage = () => {
     mainAxios.post("/user/create-comment", blogComment).then(() =>
       Swal.fire({
         title: "Success!",
-        text: "Successfully commented!",
+        text: "Successfully commented! Please Reload the page to see the comment.",
         icon: "success",
       })
+     
     );
   };
   return (

@@ -12,9 +12,9 @@
     1. Show 6 blog Post
         1. Each blog has a title, image, short description, category, details button and wishlist button [Done]
         2. Details button will take to Blog Details Page [Done]
-        3. Clicking wishlist button will add the blog on wishlist
-        4. Add time of posting into database with current time 
-        5. Sorting blogs by date or time
+        3. Clicking wishlist button will add the blog on wishlist [Done]
+        4. Add time of posting into database with current time  [Done]
+        5. Sorting blogs by date or time [Done]
 4. Featured Post Section: [https://www.hackerrank.com/blog/](https://www.hackerrank.com/blog/)
 5. Newsletter Section [Done]
     1. Have an input of email and submit button
@@ -29,7 +29,7 @@
 3. Search Field to search blogs by blog title [Done]
 4. Blogs have: title, image, short description, category, details button and wishlist button [Done]
 5. Details button [Done]
-6. wishlist button 
+6. wishlist button [Done]
 
 ### Featured Blogs Page:
 
@@ -41,7 +41,7 @@
 
 ### Blog Details Page
 
-1. Information about the blog: [Dpme]
+1. Information about the blog: [Done]
     1. title
     2. image
     3. short description
@@ -61,6 +61,7 @@
     4. short description
     5. long description
     6. Submit Button
+2. Category with a drop down
 
 ### Update Blog Page:
 
