@@ -6,7 +6,7 @@ import useAxios from '../hooks/useAxios';
 
 const AddBlog = () => {
   const {user} = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const mainAxios = useAxios();
   const url = `/user/create-blog`;
   // console.log(commentsUrl);
