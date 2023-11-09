@@ -1,7 +1,7 @@
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import { useEffect } from "react";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import auth from '../Firebase/firebase.config';
 import {
   signOut
@@ -15,7 +15,12 @@ const useAxios = () => {
   
   // const navigate = useNavigate();
   const logOut = () => {
-    return signOut(auth);
+    return signOut(auth)
+      .then(() => Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You token is invalid!",
+      }));
   };
  
     instance.interceptors.response.use(
@@ -29,6 +34,7 @@ const useAxios = () => {
         
           logOut().then(() => {            
             // navigate("/");
+            // location.redirect("/");
           })
           .catch(error => console.log(error));
         }
