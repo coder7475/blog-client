@@ -62,7 +62,7 @@ const UpdateBlog = () => {
       .then(() => {
         Swal.fire({
           title: "Success!",
-          text: "Your Blog has been added",
+          text: "Your Blog has been Updated",
           icon: "success",
         })
       })
