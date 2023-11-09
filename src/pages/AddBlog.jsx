@@ -9,6 +9,7 @@ const AddBlog = () => {
   const mainAxios = useAxios();
   const url = `/user/create-blog`;
   // console.log(commentsUrl);
+  console.log(user);
   const handleAddBlog = (e) => {
 
     e.preventDefault();
@@ -18,6 +19,7 @@ const AddBlog = () => {
     const category = form.get("category");
     const d = new Date();
     const timestamp = d.toISOString();
+    const profilePic = user.photoURL;
     // console.log(timestamp);
     const short_description = form.get("short_description");
     const long_description = form.get("long_description");
@@ -30,7 +32,8 @@ const AddBlog = () => {
       short_description,
       long_description,
       timestamp,
-      wordCount
+      wordCount,
+      profilePic
     }
     // console.log(newBlog);
     mainAxios.post(url, newBlog)

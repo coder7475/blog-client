@@ -6,11 +6,12 @@ import Registration from '../pages/Registration';
 import Login from '../pages/Login';
 import AllBlogs from '../pages/AllBlogs';
 import BlogDetailsPage from '../pages/BlogDetailsPage';
-import KaTable from '../pages/KaTable';
+// import KaTable from '../pages/KaTable';
 import PrivateRoute from '../routes/PrivateRoute';
 import Wishlist from '../pages/Wishlist';
 import AddBlog from '../pages/AddBlog';
 import UpdateBlog from '../pages/UpdateBlog';
+import ReactDataTable from '../pages/ReactDataTable';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/featuredTable",
-        element: <KaTable/>
+        element: <ReactDataTable/>
       },
       {
         path: "/wishlist",

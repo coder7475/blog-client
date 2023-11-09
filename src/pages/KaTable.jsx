@@ -55,9 +55,6 @@ const KaTable = () => {
               key: "column4",
               title: "Profile Picture",
               dataType: DataType.String,
-              cell: () => {
-                return <span>H</span>;
-              },
             },
           ]}
           data={dataArray}
