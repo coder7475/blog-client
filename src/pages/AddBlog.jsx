@@ -6,15 +6,17 @@ import useAxios from '../hooks/useAxios';
 
 const AddBlog = () => {
   const {user} = useContext(AuthContext);
+  console.log(user);
   const mainAxios = useAxios();
   const url = `/user/create-blog`;
   // console.log(commentsUrl);
-  console.log(user);
+  // console.log(user.displayName);
   const handleAddBlog = (e) => {
 
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const title = form.get("title");
+    const author = user?.displayName || user.email.slice(0,7);
     const image = form.get("image");
     const category = form.get("category");
     const d = new Date();
@@ -33,6 +35,7 @@ const AddBlog = () => {
       long_description,
       timestamp,
       wordCount,
+      author,
       profilePic
     }
     // console.log(newBlog);
