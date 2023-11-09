@@ -1,12 +1,10 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
-// import { useContext } from "react";
-// import { AuthContext } from '../providers/AuthProvider';
+import { useContext } from "react";
+import { AuthContext } from '../providers/AuthProvider';
 import Swal from "sweetalert2";
-import useAuth from '../hooks/useAuth';
 
 const Login = () => {
-  // const { googleSignIn, login } = useContext(AuthContext);
-  const { googleSignIn, login } = useAuth();
+  const { googleSignIn, login } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
