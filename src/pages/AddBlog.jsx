@@ -26,18 +26,20 @@ const AddBlog = () => {
     const short_description = form.get("short_description");
     const long_description = form.get("long_description");
     const wordCount = long_description.trim().split(/\s+/).length;
+
     const newBlog = {
       title,
       image,
       category,
+      author,
       email: user.email,
       short_description,
       long_description,
       timestamp,
       wordCount,
-      author,
       profilePic
     }
+
     // console.log(newBlog);
     mainAxios.post(url, newBlog)
       .then(() => {

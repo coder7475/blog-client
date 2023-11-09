@@ -42,6 +42,7 @@ const UpdateBlog = () => {
     const d = new Date();
     const timestamp = d.toISOString();
     // console.log(timestamp);
+    const author = user?.displayName || user.email.slice(0,7);
     const short_description = form.get("short_description");
     const long_description = form.get("long_description");
     const wordCount = long_description.trim().split(/\s+/).length;
@@ -53,6 +54,7 @@ const UpdateBlog = () => {
       short_description,
       long_description,
       timestamp,
+      author,
       wordCount
     }
     // console.log(newBlog);
