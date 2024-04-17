@@ -9,7 +9,6 @@
 
 # Backend
 ## Code: 
-##  Domain: 
     * https://server-programmers-blog.vercel.app/
     * https://server-programmers-blog.vercel.app/
 
