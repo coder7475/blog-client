@@ -3,14 +3,12 @@
 ## Blog Website - Programmers Blog
 
 # Live Link
-
 ## https://programmers-blog-68efb.web.app/
 ## https://programmers-blog-68efb.firebaseapp.com/
 
-# Backend
-## Code: 
-    * https://server-programmers-blog.vercel.app/
-    * https://server-programmers-blog.vercel.app/
+# Backend: https://github.com/coder7475/blog-server
+##  https://server-programmers-blog.vercel.app/
+## https://server-programmers-blog.vercel.app/
 
 # Features
 
